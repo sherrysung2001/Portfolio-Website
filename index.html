@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>宋昱萱 Sherry Sung｜UIUX </title>
+		<link rel="icon" href="favicon.png" >
+
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+
+
+
+		<style>
+
+
+
+			body {
+ 			 position: relative;
+			}
+
+
+
+			ul.navbar{
+				position: sticky;
+				top: 6px;
+				display: flex;
+				align-items: center;
+				/*要nav bar的所有東西對齊 要把flex 跟 align item加在這*/
+				list-style-type: none;
+			    overflow: hidden;
+				background-color:white;
+				margin:20px auto;
+				width: 85%;
+				padding: 12px 24px 8px 16px;
+				z-index: 5;
+				border-radius: 1000px;
+			}
+			
+
+			ul.navbar li{
+				float: left;	
+			}
+		
+
+
+			ul.navbar li a{
+				padding: 0px 72px 0px 0px;
+				text-align: center;
+				text-decoration: none;
+
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				font-weight: 350;
+				color: black;
+				}
+			
+
+			a.nav:hover{color:#BAB4A3;}
+
+
+
+			ul.navbar li a.resume{
+				color: white;
+				background-color:#5B5B5B;
+				border-radius: 200px;
+				padding: 6px 20px;
+			}
+
+
+
+
+			ul.navbar li a.resume:hover{
+				background-color: black;
+			}
+
+
+			.avatar{
+					display:inline-block;
+					width: 40px;
+			}
+
+			div a.resume{
+				display:block;
+				padding: 10px 30px;
+				width: 80px;
+				text-align: center;
+				border-radius: 200px;
+				color: white;
+				background-color:#5B5B5B;
+				text-decoration: none;
+			}
+
+
+			a.resume:hover{
+				background-color: black;
+			}
+
+
+
+
+		
+			div.intro{
+				display:block;
+				align-items: center;
+				margin: 80px 40px 80px 160px;
+
+			}
+
+
+			
+
+
+			hr{
+				width: 80%;
+				color: dimgray;
+			}
+
+
+
+			.project {
+			  position: relative;
+			  margin: 80px auto;
+			  width: 80%;
+			  border: 1px solid #ECECEC;
+  			  border-radius: 10px;
+  			  z-index: 0;
+			}
+
+			.image {
+			  display: block;
+			  width: 100%;
+			  height: auto;
+			  border-radius: 10px
+			}
+
+
+			.overlay {
+			  position: absolute;
+			  top: 0;
+			  background-color: rgba(0,0,0,0.4);
+			  border-radius: 8px;
+			  width: 100%;
+			  height: 100%;
+			  transition visibility: .5s ease;
+			  visibility: hidden;
+			  z-index: 1;
+			}
+
+			/*overlay重點：
+			1.放兩層overlay 一個是黑色遮罩 一個是上層的card，然後用z index錯開就好
+			2.黑色遮罩要position: absolute;＋top: 0; 然後visibility: hidden;
+			等hover時才visibility: visible;*/
+
+
+			.project:hover .overlay {
+			  visibility: visible;
+			}
+
+
+			.overlaycard {
+			  position: absolute;
+			  bottom: 30px;
+			  left: 100%;
+			  right: 30px;
+			  background-color: white;
+			  box-shadow: 5px -5px 30px #363636;
+			  border-radius: 8px;
+			  overflow-x:hidden;
+			  width: 45%;
+			  height: 80%;
+			  transition: .5s ease;
+			  z-index: 2;
+			}
+
+			.project:hover .overlaycard {
+			  width: 45%;
+			  left: 52%;
+			  right: 3%;
+			  margin: 30px 0 0 0;
+			}
+
+
+			
+
+
+			
+
+
+			.cardtext {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  width: 85%;
+			  -webkit-transform: translate(-50%, -50%);
+			  -ms-transform: translate(-50%, -50%);
+			  transform: translate(-50%, -50%);
+			}
+
+
+			h1{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 40px;
+				font-weight: 800;
+				letter-spacing: 3px;
+				color: black;
+			}
+
+
+
+			h2{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 30px;
+				font-weight: 800;
+				letter-spacing: 3px;
+				line-height: 15px;
+				color: black;
+			}
+
+
+			p{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 18px;
+				color: black;
+				font-weight: regular;
+				letter-spacing: 2px;
+				text-align:left;
+			}
+
+
+
+			span{
+				display: inline-block;
+				padding: 4px 12px;
+				background-color:#E7E4DE;
+				border-radius: 4px;
+			}
+
+
+
+
+
+			p.date{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 15px;
+				color:#8D887C;
+				font-weight: 300;
+				letter-spacing: 2px;
+				text-align:left;
+			}
+
+			div.tag{
+				display: inline-block;
+				padding: 4px 16px;
+				margin: 8px 4px 0 0;
+				background-color:#E7E4DE;
+				border-radius: 100px;
+				
+			}
+
+
+
+			div.button a:hover{
+				background-color:black;
+			}
+
+			div.button a{
+				text-decoration: none;
+				color: white;
+				font-size: 14px;
+				display:block;
+				padding: 12px 0px;
+				margin: 16px auto;
+				background-color:#5B5B5B;
+				border-radius: 4px;
+				font-size: 14px;
+				
+				text-align: center;
+			}
+
+
+
+
+			a.gototop{
+				position: fixed;
+				bottom: 40px;
+				right: 40px;
+
+				display:block;
+				width: 45px;
+				padding: 24px 10px;
+				border-radius: 100px;
+				margin: auto;
+				margin-top: 200px;
+				text-align: center;
+
+				vertical-align: middle;
+				text-decoration: none;
+				color: white;
+				background-color: #8D887C;
+				font-size: 12px;
+				box-shadow: 5px 5px 20px dimgray;
+			}
+			
+
+			a.gototop:hover{background-color:black;}
+
+
+
+			#footer{
+				width: 100%;
+				padding-top: 90px;
+				padding-bottom: 90px;
+				margin-top: 80px;
+				text-align: center;
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				color: white;
+				background-color:#595959;
+				font-weight: 200;
+			}
+
+
+
+
+
+		</style>
+	</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+
+
+		
+
+		<ul class="navbar">
+				<li><a href="./index.html"><img src="profile1.svg" class="avatar"></a></li>
+				<li><a class="nav" href="./index.html" >HOME</a></li>
+				<li><a class="nav" href="./allarticles.html" >關於我</a></li>
+				<li><a class="nav" href="./lecturers.html" >聯絡資訊</a></li>
+				<li><a class="nav" href="./about.html" >作品集</a></li>
+				<li><a class="resume" href="https://drive.google.com/file/d/1cRfGxJYxPgRqEnOsVQSEyIsP7YQmOTvR/view?usp=share_link" target="_blank">履歷下載</a></li>
+		</ul>
+
+
+
+		<div class="intro">
+				<h1>Hi! 我是宋昱萱 Sherry Sung</h1>
+				<p>我是一位正在積極自學UIUX的大學生！</p>
+				<p>上過 <span>UIUX線上課程</span> ＆ <span>北科大的「使用者經驗」「人機介面設計」課程</span></p>
+				<p>有過許多<span>實作、Side Project 經驗</span></p>
+
+				<a class="resume" href="https://drive.google.com/file/d/1cRfGxJYxPgRqEnOsVQSEyIsP7YQmOTvR/view?usp=share_link" target="_blank">履歷下載</a>
+		</div>
+
+
+
+
+
+		 <hr>
+
+
+		<div class="project">
+		  <img src="project1.png" class="image">
+  			<div class="overlay">
+  				<div class="overlaycard">
+ 		   			<div class="cardtext">
+ 		   				<p class="date">2022/9-2023/1</p>
+ 		   				<h2>北科大圖書館｜</h2>
+ 		   				<h2> 使用者經驗優化</h2>
+ 		   				<div class="tag">UX</div>
+ 		   				<div class="tag">競品分析</div>
+ 		   				<div class="tag">十字分析</div>
+ 		   				<div class="tag">使用者旅程地圖</div>
+ 		   				<div class="button"><a href="project1.html">了解細節</a></div>
+ 		   			</div>
+  				</div>
+  			</div>
+		</div>
+
+
+
+
+		<div class="project">
+		  <img src="project2.png" class="image">
+  			<div class="overlay">
+  				<div class="overlaycard">
+ 		   			<div class="cardtext">
+ 		   				<p class="date">2022/9-2023/1</p>
+ 		   				<h2>台北市立圖書館｜</h2>
+ 		   				<h2>易用性測試＆優化</h2>
+ 		   				<div class="tag">Usability Test</div>
+ 		   				<div class="tag">十大易用性原則</div>
+ 		   				<div class="tag">介面設計</div>
+ 		   				<div class="button"><a href="project1.html">了解細節</a></div>
+ 		   			</div>
+  				</div>
+  			</div>
+		</div>
+
+
+
+		<div class="project">
+		  <img src="project3.png" class="image">
+  			<div class="overlay">
+  				<div class="overlaycard">
+ 		   			<div class="cardtext">
+ 		   				<p class="date">2022/11-2022/12</p>
+ 		   				<h2>Stix購票網｜｜</h2>
+ 		   				<h2>和工程師合作</h2>
+ 		   				<div class="tag">設計系統</div>
+ 		   				<div class="tag">MVP</div>
+ 		   				<div class="tag">Wireframe</div>
+ 		   				<div class="tag">Functional Map</div>
+ 		   				<div class="tag">元件管理</div>
+ 		   				<div class="tag">User Flow</div>
+ 		   				<div class="button"><a href="project1.html">了解細節</a></div>
+ 		   			</div>
+  				</div>
+  			</div>
+		</div>
+
+
+
+		
+
+		
+
+
+			<a href="#toplogo" class="gototop">TOP</a>
+
+
+
+		<div id="footer">
+			宋昱萱 Sherry Sung | UIUX
+		</div>
+
+
+
+
+
+
+	</body>
+</html>
