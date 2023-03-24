@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>北科大圖書館｜使用者經驗優化 </title>
+		<link rel="icon" href="favicon.png" >
+
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+
+
+
+
+		<script type="text/javascript">
+			window.addEventListener("scroll", function() {
+ 		 var scrollPosition = window.scrollY;
+ 		 var navbar = document.querySelector("ul.navbar");
+ 		 if (scrollPosition > 0) {
+  		  navbar.classList.add("scroll");
+  		} else {
+   		 navbar.classList.remove("scroll");
+  			}
+			})
+			
+		</script>
+
+
+
+
+
+
+
+
+
+
+		<style>
+
+
+
+			body {
+ 			 position: relative;
+			}
+
+
+
+
+
+
+	/*這裡是開頭——————————————————————————————————*/
+			ul.navbar.scroll {
+				box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+			}
+
+
+
+			ul.navbar{
+				position: sticky;
+				top: 6px;
+				margin:0 auto;
+				padding: 16px 24px 0px 20px;
+				z-index: 5;
+				width: 85%;
+				overflow: hidden;
+  				line-height: 40px;
+
+				display: block;
+				/*要nav bar的所有東西對齊 
+				然後部分靠右
+				要display:block
+				然後body要加 <li style="float:right">
+				然後要加line height！！ */
+
+				list-style-type: none;
+				background-color:white;
+				border-radius: 1000px;
+
+				}
+			
+
+
+			ul.navbar li{
+				height:100%;
+				float: left;	
+				align-items: center; 
+			}
+		
+		
+
+
+			ul.navbar li a{
+				padding: 0px 72px 0px 0px;
+				text-align: center;
+				vertical-align: middle;
+				text-decoration: none;
+
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				font-weight: 350;
+				color: black;
+				}
+			
+
+			a.nav:hover{color:#BAB4A3;}
+
+
+
+			ul.navbar li a.resume{
+				color: white;
+				background-color:#5B5B5B;
+				border-radius: 200px;
+				padding: 10px 24px;
+			}
+
+
+
+
+			ul.navbar li a.resume:hover{
+				background-color: black;
+			}
+
+
+			.avatar{
+					display:inline-block;
+					width: 50px;
+
+			}
+
+			div a.resume{
+				display:inline-block;
+				padding: 10px 30px;
+				width: 80px;
+				text-align: center;
+				border-radius: 200px;
+				color: white;
+				background-color:#5B5B5B;
+				text-decoration: none;
+			}
+
+
+			a.resume:hover{
+				background-color: black;
+			}
+
+
+
+
+
+
+
+
+
+
+
+			/*這裡是標題卡——————————————————————————————————*/
+
+			img.project{
+				width: 100%;
+				height: auto;
+				z-index: 0;
+				display: block;
+
+				position: absolute;
+				margin-top: 0;
+			}
+
+
+				div.titlecard{
+				background-color: white;
+				box-shadow: 4px 4px 20px rgb(0, 0, 0 , 0.2);
+				border-radius: 8px;
+				width: 70%;
+				padding: 30px 40px;
+				z-index: 1;
+				position:relative ;
+				margin: 380px 15% 80px 15%;
+			}
+
+
+
+			h1{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 40px;
+				font-weight: 800;
+				letter-spacing: 3px;
+				color: black;
+				line-height: auto;
+			}
+
+
+
+			p{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 18px;
+				color: black;
+				font-weight: regular;
+				letter-spacing: 2px;
+				text-align:left;
+			}
+
+
+		
+
+
+
+			div.tag{
+				display: inline-block;
+				padding: 4px 16px;
+				margin: 8px 4px 0 0;
+				background-color:#E7E4DE;
+				border-radius: 100px;
+				font-size: 12px;
+			}
+
+
+			div.protag{
+				display: inline-block;
+				padding: 4px 16px;
+				margin: 8px 4px 0 0;
+				background-color:#8D887C;
+				border-radius: 100px;
+				font-size: 12px;
+				color: white;
+			}
+
+
+
+			span.date{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 15px;
+				color:#8D887C;
+				font-weight: 300;
+				letter-spacing: 2px;
+				float: right;
+				padding: 8px 0;
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			/*這裡是TOC——————————————————————————————————*/
+			ul#TOC{
+				position:sticky;
+				top:30%;
+				padding:0 12px;
+				z-index: 2;
+			}
+
+
+			ul#TOC li{
+				color:#BAB4A3;
+				padding: 4px;
+				list-style-type: none;
+
+			}
+
+
+			ul#TOC li a{
+				color:#BAB4A3;
+				text-decoration: none;
+				font-size: 12px;
+				font-weight: 500;
+			}
+
+
+
+			ul#TOC li a: active{
+				color:black;
+				font-weight: 700;
+			}
+
+
+			ul#TOC li a:hover{
+				color:black;
+				font-weight: 700;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			/*這裡是文章——————————————————————————————————*/
+
+
+			div.body{
+				margin-top: -450px;
+				z-index: 0;
+				position:relative;
+			}
+
+
+			div.outline{
+				margin: 200px auto;
+				width: 60%;
+				position: relative;
+			}
+
+
+			img.outlineimg{
+				width: 100%;
+			}
+
+
+			hr{
+				width: 100%;
+				border: 0.5px solid lightgray;
+				position: relative;
+				margin: 100px 0;
+			}
+
+
+			div.container{
+				width: 90%;
+				margin: auto;
+				position: relative;
+				margin-top: 100px;
+				display: flex;
+				/*display flex是為了讓兩個div可以併排*/
+			}
+
+
+			div.subtitle{
+				display: inline-block;
+
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 20px;
+				font-weight: 700;
+				letter-spacing: 6px;
+
+				color: #8D887C;
+				margin: 0 auto;
+				width: 15%;
+				text-align: right;
+				vertical-align: top;
+				/*text align 讓文字可以靠右對齊
+				然後有width限制 讓所有段落可以對齊*/
+			}
+
+
+
+			div.paragraph{
+				display: inline-block;
+				width: 70%;
+				margin: 0 auto;
+				text-align: left;
+				/*讓文字可以靠左對齊 然後有width限制 讓所有段落可以對齊*/
+				vertical-align: top;
+
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				font-weight: 400;
+				letter-spacing: 2px;
+				line-height: 30px;
+				color: #494949;
+
+			}
+
+
+			/*
+			img1：灰線圓角框
+			img2：有文字段落＋圖，所以上方要留margin
+			img3：只有圖，所以上方不留margin，直接切齊
+			*/
+			.img1{
+				width:100% ;
+				border-radius: 8px;
+				border: 1px solid lightgray;
+				margin-top: 20px;
+			}
+
+
+			.img2{
+				width:100% ;
+				margin-top: 20px;
+			}
+
+
+			.img3{
+				width:100% ;
+			}
+
+			
+
+
+
+
+
+
+
+
+
+
+			/*這裡是尾巴——————————————————————————————————*/
+
+			
+			div.next{
+				margin: 100px auto;
+				width: 80%;
+			}
+
+
+
+			img.next{
+				width: 100%;
+				border-radius: 20px;
+				border: lightgray solid 2px;
+			}
+			/*圓角跟邊框都要直接加在照片上 不能加在div或是anchor上*/
+
+
+			img.next:hover{
+				box-shadow: 5px 5px 20px lightgray;
+			}
+
+
+
+			a.gototop{
+				position: fixed;
+				bottom: 40px;
+				right: 40px;
+
+				display:block;
+				width: 45px;
+				padding: 24px 10px;
+				border-radius: 100px;
+				margin: auto;
+				margin-top: 200px;
+				text-align: center;
+
+				vertical-align: middle;
+				text-decoration: none;
+				color: white;
+				background-color: #8D887C;
+				font-size: 12px;
+				box-shadow: 5px 5px 20px dimgray;
+			}
+			
+
+			a.gototop:hover{background-color:black;}
+
+
+
+			#footer{
+				width: 100%;
+				padding-top: 90px;
+				padding-bottom: 90px;
+				margin-top: 80px;
+				text-align: center;
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				color: white;
+				background-color:#595959;
+				font-weight: 200;
+			}
+
+
+
+		</style>
+	</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<body data-spy="scroll" data-target="#target">
+
+
+
+		
+
+<!-- 選單 -->
+
+		<ul class="navbar" >
+				<li><a href="./index.html"><img src="avatar.svg" class="avatar"></a></li>
+				<li style="float:right"><a class="resume" href="https://drive.google.com/file/d/1cRfGxJYxPgRqEnOsVQSEyIsP7YQmOTvR/view?usp=share_link" target="_blank">履歷下載</a></li>
+				<li style="float:right"><a class="nav" href="./aboutme.html" >關於我</a></li>
+				<li style="float:right"><a class="nav" href="./index.html" >HOME</a></li>
+				
+		</ul>
+
+
+
+
+
+
+		<img src="project1.png" class="project" id="top">
+	
+
+		
+	
+
+     	<div class="titlecard">
+     		<div class="protag">＃學校小組專案</div>
+     		<div class="tag">UX</div>
+ 		   	<div class="tag">競品分析</div>
+ 		   	<div class="tag">十字分析</div>
+ 		   	<div class="tag">使用者旅程地圖</div>
+ 		   	<span class="date">2022/9－2023/1</span>
+     		<h1>北科大圖書館｜使用者經驗優化</h1>
+		</div>
+
+
+
+		<ul id="TOC">
+        	<li><a class="toc-item" href="#背景與目標">－背景與目標</a></li>
+        	<li><a class="toc-item" href="#設計流程">－設計流程</a></li>
+        	<li><a class="toc-item" href="#服務探索＋脈絡詢訪">－服務探索＋脈絡詢訪</a></li>
+        	<li><a class="toc-item" href="#競品分析">－競品分析</a></li>
+        	<li><a class="toc-item" href="#十字分析">－十字分析</a></li>
+        	<li><a class="toc-item" href="#人物誌">－人物誌</a></li>
+        	<li><a class="toc-item" href="#使用者旅程地圖">－使用者旅程地圖</a></li>
+        	<li><a class="toc-item" href="#設計觀點">－設計觀點</a></li>
+        	<li><a class="toc-item" href="#構想展開心智圖">－構想展開心智圖</a></li>
+        	<li><a class="toc-item" href="#解決方案">－解決方案</a></li>
+        	<li><a class="toc-item" href="#原型製作">－原型製作</a></li>
+     	</ul>
+
+
+
+
+
+
+	<div class="body">
+
+
+			<div class="outline">
+				<img src="project1_outline.png" class="outlineimg">
+			</div>
+
+
+
+
+
+
+     		<div class="container">
+	     		<div id="背景與目標" class="subtitle">背景與目標</div>
+	     		<div class="paragraph">
+	     			此為北科大 互動設計系課程【使用者經驗】的專案，專案目的為「改善北科圖書館的使用者經驗」，而我們將重心放在了館內的自習室。
+	     			<img src="project1_bg.svg" class="img1">
+	     			<img src="project1_goal.svg" class="img2">
+	     			
+	     		</div>
+	     	</div>
+	     	
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="設計流程" class="subtitle">設計流程</div>
+	     		<div class="paragraph">
+	     			<img src="project1_process.svg" class="img3">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="服務探索＋脈絡詢訪" class="subtitle">服務探索<br>＋脈絡詢訪</div>
+	     		<div class="paragraph">
+	     			透過服務探索（親自體驗服務）和 脈絡詢訪（觀察空間中的人事物互動），我們觀察到：
+	     			<img src="project1_observation.svg" class="img2">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="競品分析" class="subtitle">競品分析</div>
+	     		<div class="paragraph">
+	     			我們比較了其他大學的自修室機制及設備，來和北科大自習室做比較：
+	     			<img src="project1_compe.svg" class="img2">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="十字分析" class="subtitle">十字分析</div>
+	     		<div class="paragraph"><img src="project1_十字分析.svg" class="img3"></div>
+	     	</div>
+	     	<hr>
+
+
+	     	<div class="container">
+	     		<div id="人物誌" class="subtitle">人物誌</div>
+	     		<div class="paragraph">
+	     			我們透過人物誌去探討，北科自修室的主要使用者的特質以及需求：
+	     			<img src="project1_persona.svg" class="img2"></div>
+	     	</div>
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="使用者旅程地圖" class="subtitle">使用者旅程地圖</div>
+	     		<div class="paragraph">
+	     			透過使用者旅程地圖，我們能更全面的去發現使用者可能遇到的問題以及需求，以發展更完整的解決方法。
+	     			<img src="project1_ujm.svg" class="img3">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+	     	<div class="container">
+	     		<div id="設計觀點" class="subtitle">設計觀點</div>
+	     		<div class="paragraph">
+	     			最後我們整理出了設計觀點，釐清使用者的主要需求：
+	     			<img src="project1＿pov.svg" class="img2">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+	     	<div class="container">
+	     		<div id="構想展開心智圖" class="subtitle">構想展開心智圖</div>
+	     		<div class="paragraph">
+	     			構想展開心智圖讓我們以「發散」的模式來發想各種可能的解決方法：
+	     			
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+	     	<div class="container">
+	     		<div id="解決方案" class="subtitle">解決方案</div>
+	     		<div class="paragraph">
+	     			<img src="project1_solution.svg" class="img3">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="原型製作" class="subtitle">原型製作</div>
+	     		<div class="paragraph">
+	     			<img src="project1_deliver.svg" class="img3">
+	     		</div>
+	     	</div>
+
+
+
+
+     </div>
+
+
+
+
+
+
+
+     <div class="next">
+
+	     <a href="project3.html" class="next"><img src="project3_banner_next.svg" class="next"></a>
+
+     </div>
+
+
+
+
+
+
+
+		
+	     <script>
+   		 	$('body').scrollspy({target:'#TOC'})
+		 </script>
+		
+
+
+		<a href="#top" class="gototop">TOP</a>
+
+
+		<div id="footer">
+			宋昱萱 Sherry Sung | UIUX
+		</div>
+
+
+		
+
+
+
+	</body>
+</html>

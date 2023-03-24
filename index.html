@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>宋昱萱 Sherry Sung｜UIUX </title>
+		<link rel="icon" href="favicon.png" >
+
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+		<!--這裡可以做出滾動變化效果 然後底下css要加一個
+				ul.navbar.scroll {
+  				background-color: #333;
+			 	color: #fff;}
+		 -->
+
+
+		<script type="text/javascript">
+			window.addEventListener("scroll", function() {
+ 		 var scrollPosition = window.scrollY;
+ 		 var navbar = document.querySelector("ul.navbar");
+ 		 if (scrollPosition > 0) {
+  		  navbar.classList.add("scroll");
+  		} else {
+   		 navbar.classList.remove("scroll");
+  			}
+			})
+			
+		</script>
+
+
+
+
+
+
+
+
+
+
+		<style>
+
+
+	
+			body {
+ 			 position: relative;
+			}
+
+
+
+
+
+
+	/*這裡是開頭——————————————————————————————————*/
+			ul.navbar.scroll {
+				box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+			}
+
+
+
+			ul.navbar{
+				position: sticky;
+				top: 6px;
+				margin:0 auto;
+				padding: 16px 24px 0px 20px;
+				z-index: 5;
+				width: 85%;
+				overflow: hidden;
+  				line-height: 40px;
+
+				display: block;
+				/*要nav bar的所有東西對齊 
+				然後部分靠右
+				要display:block
+				然後body要加 <li style="float:right">
+				然後要加line height！！ */
+
+				list-style-type: none;
+				background-color:white;
+				border-radius: 1000px;
+
+				}
+			
+
+
+			ul.navbar li{
+				height:100%;
+				float: left;	
+				align-items: center; 
+			}
+		
+		
+
+
+			ul.navbar li a{
+				padding: 0px 72px 0px 0px;
+				text-align: center;
+				vertical-align: middle;
+				text-decoration: none;
+
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				font-weight: 350;
+				color: black;
+				}
+			
+
+			a.nav:hover{color:#BAB4A3;}
+
+
+
+			ul.navbar li a.resume{
+				color: white;
+				background-color:#5B5B5B;
+				border-radius: 200px;
+				padding: 10px 24px;
+			}
+
+
+
+
+			ul.navbar li a.resume:hover{
+				background-color: black;
+			}
+
+
+			.avatar{
+					display:inline-block;
+					width: 50px;
+
+			}
+
+			div a.resume{
+				display:inline-block;
+				padding: 10px 30px;
+				width: 80px;
+				text-align: center;
+				border-radius: 200px;
+				color: white;
+				background-color:#5B5B5B;
+				text-decoration: none;
+			}
+
+
+			a.resume:hover{
+				background-color: black;
+			}
+
+
+
+
+	/*這裡是自我介紹————————————————————————————————*/
+			div.intro{
+				display:block;
+				align-items: center;
+				margin: 80px 40px 80px 160px;
+
+			}
+
+
+			
+
+
+
+
+	/*這裡是設計專案————————————————————————————————*/
+			hr{
+				width: 80%;
+				color: dimgray;
+			}
+
+
+			div.ptitle{
+				color:#464341;
+				font-family:'Noto Sans TC', sans-serif;
+				font-size: 40px;
+				font-weight: 800;
+				letter-spacing: 3px;
+				background-color: white;
+				display: block;
+				margin: 80px auto 10px auto;
+				text-align: center;
+			}
+
+
+
+
+			.project {
+			  position: relative;
+			  margin: 80px auto;
+			  width: 80%;
+			  border: 1px solid #ECECEC;
+  			  border-radius: 10px;
+  			  z-index: 0;
+			}
+
+			.image {
+			  display: block;
+			  width: 100%;
+			  height: auto;
+			  border-radius: 10px
+			}
+
+
+			.overlay {
+			  position: absolute;
+			  top: 0;
+			  background-color: rgba(0,0,0,0.4);
+			  border-radius: 8px;
+			  width: 100%;
+			  height: 100%;
+			  transition visibility: .5s ease;
+			  visibility: hidden;
+			  z-index: 1;
+			}
+
+			/*overlay重點：
+			1.放兩層overlay 一個是黑色遮罩 一個是上層的card，然後用z index錯開就好
+			2.黑色遮罩要position: absolute;＋top: 0; 然後visibility: hidden;
+			等hover時才visibility: visible;*/
+
+
+			.project:hover .overlay {
+			  visibility: visible;
+			}
+
+
+			.overlaycard {
+			  position: absolute;
+			  bottom: 30px;
+			  left: 100%;
+			  right: 30px;
+			  background-color: white;
+			  box-shadow: 5px -5px 30px #363636;
+			  border-radius: 8px;
+			  overflow-x:hidden;
+			  width: 45%;
+			  height: 80%;
+			  transition: .5s ease;
+			  z-index: 2;
+			}
+
+			.project:hover .overlaycard {
+			  width: 45%;
+			  left: 52%;
+			  right: 3%;
+			  margin: 30px 0 0 0;
+			}
+
+
+			
+
+
+			
+
+
+			.cardtext {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  width: 85%;
+			  -webkit-transform: translate(-50%, -50%);
+			  -ms-transform: translate(-50%, -50%);
+			  transform: translate(-50%, -50%);
+			}
+
+
+			h1{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 40px;
+				font-weight: 800;
+				letter-spacing: 3px;
+				color: black;
+			}
+
+
+
+			h2{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 30px;
+				font-weight: 800;
+				letter-spacing: 3px;
+				line-height: 15px;
+				color: black;
+			}
+
+
+			p{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 18px;
+				color: black;
+				font-weight: regular;
+				letter-spacing: 2px;
+				text-align:left;
+			}
+
+
+
+			span{
+				display: inline-block;
+				padding: 4px 12px;
+				background-color:#E7E4DE;
+				border-radius: 4px;
+			}
+
+
+
+
+
+			p.date{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 15px;
+				color:#8D887C;
+				font-weight: 300;
+				letter-spacing: 2px;
+				text-align:left;
+			}
+
+			div.tag{
+				display: inline-block;
+				padding: 4px 16px;
+				margin: 8px 4px 0 0;
+				background-color:#E7E4DE;
+				border-radius: 100px;
+				
+			}
+
+
+
+			div.button a:hover{
+				background-color:black;
+			}
+
+			div.button a{
+				text-decoration: none;
+				color: white;
+				font-size: 14px;
+				display:block;
+				padding: 12px 0px;
+				margin: 16px auto;
+				background-color:#5B5B5B;
+				border-radius: 4px;
+				font-size: 14px;
+				
+				text-align: center;
+			}
+
+
+
+
+	/*這裡是尾巴————————————————————————————————*/
+			a.gototop{
+				position: fixed;
+				bottom: 40px;
+				right: 40px;
+
+				display:block;
+				width: 45px;
+				padding: 24px 10px;
+				border-radius: 100px;
+				margin: auto;
+				margin-top: 200px;
+				text-align: center;
+
+				vertical-align: middle;
+				text-decoration: none;
+				color: white;
+				background-color: #8D887C;
+				font-size: 12px;
+				box-shadow: 5px 5px 20px dimgray;
+			}
+			
+
+			a.gototop:hover{background-color:black;}
+
+
+
+			#footer{
+				width: 100%;
+				padding-top: 90px;
+				padding-bottom: 90px;
+				margin-top: 80px;
+				text-align: center;
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				color: white;
+				background-color:#595959;
+				font-weight: 200;
+			}
+
+
+
+
+
+		</style>
+	</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+
+
+
+
+
+<!-- 選單 -->
+
+		<ul class="navbar" >
+				<li><a href="./index.html"><img src="avatar.svg" class="avatar"></a></li>
+				<li style="float:right"><a class="resume" href="https://drive.google.com/file/d/1cRfGxJYxPgRqEnOsVQSEyIsP7YQmOTvR/view?usp=share_link" target="_blank">履歷下載</a></li>
+				<li style="float:right"><a class="nav" href="./aboutme.html" >關於我</a></li>
+				<li style="float:right"><a class="nav" href="./index.html" >HOME</a></li>
+				
+		</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 自我介紹 -->
+
+		<div class="intro" id="top">
+				<h1>Hi! 我是宋昱萱 Sherry Sung</h1>
+				<p>我是一位正在積極自學UIUX的大學生！</p>
+				<p>上過 <span>UIUX線上課程</span> ＆ <span>北科大的「使用者經驗」「人機介面設計」課程</span></p>
+				<p>有過許多<span>實作、Side Project 經驗</span></p>
+
+				<a class="resume" href="https://drive.google.com/file/d/1cRfGxJYxPgRqEnOsVQSEyIsP7YQmOTvR/view?usp=share_link" target="_blank">履歷下載</a>
+				<a class="resume" href="https://drive.google.com/file/d/1A4DKIPW8B-s2myvQ_BGjUgE-nKWINPOq/view?usp=share_link" target="_blank">作品集PDF</a>
+		</div>
+
+		 <hr>
+
+
+
+
+
+
+
+
+
+
+ <!-- 設計專案 -->
+
+		 <div class="ptitle">－ 設計專案 －</div>
+
+
+
+
+		 <div class="project">
+		  <img src="./project3.png" class="image">
+  			<div class="overlay">
+  				<div class="overlaycard">
+ 		   			<div class="cardtext">
+ 		   				<p class="date">2022/11-2022/12</p>
+ 		   				<h2>Stix購票網｜</h2>
+ 		   				<h2>和工程師合作</h2>
+ 		   				<div class="tag">設計系統</div>
+ 		   				<div class="tag">MVP</div>
+ 		   				<div class="tag">Wireframe</div>
+ 		   				<div class="tag">Functional Map</div>
+ 		   				<div class="tag">元件管理</div>
+ 		   				<div class="tag">User Flow</div>
+ 		   				<div class="button"><a href="project3.html">了解細節</a></div>
+ 		   			</div>
+  				</div>
+  			</div>
+		</div>
+
+
+
+
+
+
+		<div class="project">
+		  <img src="./project2.png" class="image">
+  			<div class="overlay">
+  				<div class="overlaycard">
+ 		   			<div class="cardtext">
+ 		   				<p class="date">2022/9-2023/1</p>
+ 		   				<h2>台北市立圖書館｜</h2>
+ 		   				<h2>易用性測試＆優化</h2>
+ 		   				<div class="tag">Usability Test</div>
+ 		   				<div class="tag">十大易用性原則</div>
+ 		   				<div class="tag">介面設計</div>
+ 		   				<div class="button"><a href="project2.html">了解細節</a></div>
+ 		   			</div>
+  				</div>
+  			</div>
+		</div>
+
+
+
+		<div class="project">
+		  <img src="./project1.png" class="image">
+  			<div class="overlay">
+  				<div class="overlaycard">
+ 		   			<div class="cardtext">
+ 		   				<p class="date">2022/9-2023/1</p>
+ 		   				<h2>北科大圖書館｜</h2>
+ 		   				<h2> 使用者經驗優化</h2>
+ 		   				<div class="tag">UX</div>
+ 		   				<div class="tag">競品分析</div>
+ 		   				<div class="tag">十字分析</div>
+ 		   				<div class="tag">使用者旅程地圖</div>
+ 		   				<div class="button"><a href="project1.html">了解細節</a></div>
+ 		   			</div>
+  				</div>
+  			</div>
+		</div>
+
+
+		
+
+		
+
+
+			<a href="#top" class="gototop">TOP</a>
+
+
+
+		<div id="footer">
+			宋昱萱 Sherry Sung | UIUX<br>
+			Email：sherrysung214@gmail.com
+		</div>
+
+
+
+
+
+
+	</body>
+</html>

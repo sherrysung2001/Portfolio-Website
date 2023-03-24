@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>台北市立圖書館｜易用性測試與優化 </title>
+		<link rel="icon" href="favicon.png" >
+
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+		<script type="text/javascript">
+			window.addEventListener("scroll", function() {
+ 		 var scrollPosition = window.scrollY;
+ 		 var navbar = document.querySelector("ul.navbar");
+ 		 if (scrollPosition > 0) {
+  		  navbar.classList.add("scroll");
+  		} else {
+   		 navbar.classList.remove("scroll");
+  			}
+			})
+			
+		</script>
+
+
+
+
+
+
+
+
+
+
+		<style>
+
+
+
+			body {
+ 			 position: relative;
+			}
+
+
+
+
+
+
+
+	/*這裡是開頭——————————————————————————————————*/
+			ul.navbar.scroll {
+				box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+			}
+
+			ul.navbar{
+				position: sticky;
+				top: 6px;
+				margin:0 auto;
+				padding: 16px 24px 0px 20px;
+				z-index: 5;
+				width: 85%;
+				overflow: hidden;
+  				line-height: 40px;
+
+				display: block;
+				/*要nav bar的所有東西對齊 
+				然後部分靠右
+				要display:block
+				然後body要加 <li style="float:right">
+				然後要加line height！！ */
+
+				list-style-type: none;
+				background-color:white;
+				border-radius: 1000px;
+
+				}
+			
+
+
+			ul.navbar li{
+				height:100%;
+				float: left;	
+				align-items: center; 
+			}
+		
+		
+
+
+			ul.navbar li a{
+				padding: 0px 72px 0px 0px;
+				text-align: center;
+				vertical-align: middle;
+				text-decoration: none;
+
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				font-weight: 350;
+				color: black;
+				}
+			
+
+			a.nav:hover{color:#BAB4A3;}
+
+
+
+			ul.navbar li a.resume{
+				color: white;
+				background-color:#5B5B5B;
+				border-radius: 200px;
+				padding: 10px 24px;
+			}
+
+
+
+
+			ul.navbar li a.resume:hover{
+				background-color: black;
+			}
+
+
+			.avatar{
+					display:inline-block;
+					width: 50px;
+
+			}
+
+			div a.resume{
+				display:inline-block;
+				padding: 10px 30px;
+				width: 80px;
+				text-align: center;
+				border-radius: 200px;
+				color: white;
+				background-color:#5B5B5B;
+				text-decoration: none;
+			}
+
+
+			a.resume:hover{
+				background-color: black;
+			}
+
+
+
+
+
+
+
+
+
+	/*這裡是標題卡——————————————————————————————————*/
+
+			img.project{
+				width: 100%;
+				height: auto;
+				z-index: 0;
+				display: block;
+
+				position: absolute;
+				margin-top: 0;
+			}
+
+
+				div.titlecard{
+				background-color: white;
+				box-shadow: 4px 4px 20px rgb(0, 0, 0 , 0.2);
+				border-radius: 8px;
+				width: 70%;
+				padding: 30px 40px;
+				z-index: 1;
+				position:relative ;
+				margin: 380px 15% 80px 15%;
+			}
+
+
+
+			h1{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 40px;
+				font-weight: 800;
+				letter-spacing: 3px;
+				color: black;
+				line-height: auto;
+			}
+
+
+
+			p{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 18px;
+				color: black;
+				font-weight: regular;
+				letter-spacing: 2px;
+				text-align:left;
+			}
+
+
+		
+
+
+
+			div.tag{
+				display: inline-block;
+				padding: 4px 16px;
+				margin: 8px 4px 0 0;
+				background-color:#E7E4DE;
+				border-radius: 100px;
+				font-size: 12px;
+			}
+
+
+			div.protag{
+				display: inline-block;
+				padding: 4px 16px;
+				margin: 8px 4px 0 0;
+				background-color:#8D887C;
+				border-radius: 100px;
+				font-size: 12px;
+				color: white;
+			}
+
+
+
+			span.date{
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 15px;
+				color:#8D887C;
+				font-weight: 300;
+				letter-spacing: 2px;
+				float: right;
+				padding: 8px 0;
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*這裡是TOC——————————————————————————————————*/
+			ul#TOC{
+				position:sticky;
+				top:30%;
+				padding:0 12px;
+				z-index: 2;
+			}
+
+
+			ul#TOC li{
+				color:#BAB4A3;
+				padding: 4px;
+				list-style-type: none;
+
+			}
+
+
+			ul#TOC li a{
+				color:#BAB4A3;
+				text-decoration: none;
+				font-size: 12px;
+				font-weight: 500;
+			}
+
+
+
+			ul#TOC li a: active{
+				color:black;
+				font-weight: 700;
+			}
+
+
+			ul#TOC li a:hover{
+				color:black;
+				font-weight: 700;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*這裡是文章——————————————————————————————————*/
+
+
+			div.body{
+				margin-top: -450px;
+				z-index: 0;
+				position:relative;
+			}
+
+
+			div.outline{
+				margin: 350px auto 200px auto;
+				width: 60%;
+				position: relative;
+			}
+
+
+			img.outlineimg{
+				width: 100%;
+			}
+
+
+			hr{
+				width: 100%;
+				border: 0.5px solid lightgray;
+				position: relative;
+				margin: 100px 0;
+			}
+
+
+			div.container{
+				width: 90%;
+				margin: auto;
+				position: relative;
+				margin-top: 100px;
+				display: flex;
+				/*display flex是為了讓兩個div可以併排*/
+			}
+
+
+			div.subtitle{
+				display: inline-block;
+
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 20px;
+				font-weight: 700;
+				letter-spacing: 6px;
+
+				color: #8D887C;
+				margin: 0 auto;
+				width: 15%;
+				text-align: right;
+				vertical-align: top;
+				/*text align 讓文字可以靠右對齊
+				然後有width限制 讓所有段落可以對齊*/
+			}
+
+
+
+			div.paragraph{
+				display: inline-block;
+				width: 70%;
+				margin: 0 auto;
+				text-align: left;
+				/*讓文字可以靠左對齊 然後有width限制 讓所有段落可以對齊*/
+				vertical-align: top;
+
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				font-weight: 400;
+				letter-spacing: 2px;
+				line-height: 30px;
+				color: #494949;
+
+			}
+
+
+			/*
+			img1：灰線圓角框
+			img2：有文字段落＋圖，所以上方要留margin
+			img3：只有圖，所以上方不留margin，直接切齊
+			*/
+			.img1{
+				width:100% ;
+				border-radius: 8px;
+				border: 1px solid lightgray;
+				margin-top: 20px;
+			}
+
+
+			.img2{
+				width:100% ;
+				margin-top: 20px;
+			}
+
+
+			.img3{
+				width:100% ;
+			}
+
+			
+
+
+
+
+
+
+
+
+
+
+			/*這裡是尾巴——————————————————————————————————*/
+
+			div.next{
+				margin: 100px auto;
+				width: 80%;
+			}
+
+
+
+			img.next{
+				width: 100%;
+				border-radius: 20px;
+				border: lightgray solid 2px;
+			}
+			/*圓角跟邊框都要直接加在照片上 不能加在div或是anchor上*/
+
+
+			img.next:hover{
+				box-shadow: 5px 5px 20px lightgray;
+			}
+
+
+
+
+
+
+
+			a.gototop{
+				position: fixed;
+				bottom: 40px;
+				right: 40px;
+
+				display:block;
+				width: 45px;
+				padding: 24px 10px;
+				border-radius: 100px;
+				margin: auto;
+				margin-top: 200px;
+				text-align: center;
+
+				vertical-align: middle;
+				text-decoration: none;
+				color: white;
+				background-color: #8D887C;
+				font-size: 12px;
+				box-shadow: 5px 5px 20px dimgray;
+			}
+			
+
+			a.gototop:hover{background-color:black;}
+
+
+
+			#footer{
+				width: 100%;
+				padding-top: 90px;
+				padding-bottom: 90px;
+				margin-top: 80px;
+				text-align: center;
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 16px;
+				color: white;
+				background-color:#595959;
+				font-weight: 200;
+			}
+
+
+
+		</style>
+	</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<body data-spy="scroll" data-target="#target">
+
+
+
+		
+<!-- 選單 -->
+		<ul class="navbar" >
+				<li><a href="./index.html"><img src="avatar.svg" class="avatar"></a></li>
+				<li style="float:right"><a class="resume" href="https://drive.google.com/file/d/1cRfGxJYxPgRqEnOsVQSEyIsP7YQmOTvR/view?usp=share_link" target="_blank">履歷下載</a></li>
+				<li style="float:right"><a class="nav" href="./aboutme.html" >關於我</a></li>
+				<li style="float:right"><a class="nav" href="./index.html" >HOME</a></li>
+				
+		</ul>
+
+
+
+
+
+
+		<img src="project2.png" class="project" id="top">
+	
+
+		
+	
+
+     	<div class="titlecard">
+     		<div class="protag">＃學校小組專案</div>
+     		<div class="tag">Usability Test</div>
+ 		   	<div class="tag">UI</div>
+ 		   	<div class="tag">十大易用性原則</div>
+ 		   	<div class="tag">易用性優化</div>
+ 		   	<span class="date">2022/9－2023/1</span>
+     		<h1>台北市立圖書館｜易用性測試與優化</h1>
+		</div>
+
+
+
+		<ul id="TOC">
+        	<li><a class="toc-item" href="#背景與目標">－背景與目標</a></li>
+        	<li><a class="toc-item" href="#設計流程">－設計流程</a></li>
+        	<li><a class="toc-item" href="#測試任務">－測試任務</a></li>
+        	<li><a class="toc-item" href="#測試結果">－測試結果</a></li>
+        	<li><a class="toc-item" href="#易用性優化">－易用性優化</a></li>
+     	</ul>
+
+
+
+
+
+
+		<div class="body">
+
+
+			<div class="outline">
+				<img src="project2_outline.svg" class="outlineimg">
+			</div>
+
+
+
+
+
+
+     		<div class="container">
+	     		<div id="背景與目標" class="subtitle">背景與目標</div>
+	     		<div class="paragraph">
+	     			此為第一個和工程師朋友合作的專案。
+	     			<img src="project2_bg.svg" class="img1">
+	     			<img src="project2_goal.svg" class="img2">
+	     			
+	     		</div>
+	     	</div>
+	     	
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="設計流程" class="subtitle">設計流程</div>
+	     		<div class="paragraph">
+	     			<img src="project2_process.svg" class="img3">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="測試任務" class="subtitle">測試任務</div>
+	     		<div class="paragraph">
+	     			
+	     			根據要測試的問題，設計不同的測試任務，來驗證、觀察使用者真正的操作問題，做出符合需求的迭代，而不是基於設計師自己的假設。
+	     			<ol type="1">
+	     				<li>從上方導覽列的「到館資訊」>「服務據點一覽」，分別查詢「松山區」的分館資訊列表，然後回到首頁</li>
+						<li>滑動到首頁最下方，找到「台北通APP下載QR code」，並掃描</li>
+						<li>點進上方導覽列的「到館資訊」>「開館資訊」，查看總館2023/1/5(四)開館時間</li>
+						<li>按「館藏查詢」，然後使用「分館查詢」，點選「社子島智慧圖書館」，然後恢復到不分館別的查詢系統</li>
+						<li>在此頁面往下滑，找到「熱門館藏」，查看完整的熱門館藏清單</li>
+						<li>點進「館藏瀏覽」，選擇「藝術類」>「音樂」>「音樂理論」，將左上角「出版年度」限縮條件在「0-2020年」</li>
+						<li>查看第3頁，然後切換到最後一頁，再回去第12頁</li>
+						<li>使用「篩選資料類型」的功能，選擇「視聽資料」後，再將資料類型篩選改成「圖書」</li>
+						<li>回到最一開始的「台北市立圖書館首頁」</li>
+						<li>找到 「借閱證掛失」的方法，並申請線上掛失</li>
+					</ol>
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="測試結果" class="subtitle">測試結果</div>
+	     		<div class="paragraph">
+	     			獲得測試結果後，選出真正重要的使用問題，並做出相對應的迭代。
+	     			<img src="project2_result.svg" class="img2">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+
+
+	     	<div class="container">
+	     		<div id="易用性優化t" class="subtitle">易用性優化</div>
+	     		<div class="paragraph">
+	     			<img src="project2_prototype1.svg" class="img3">
+	     			<br><br>
+	     			<img src="project2_prototype2.svg" class="img2">
+	     			<br><br>
+	     			<img src="project2_prototype3.svg" class="img2">
+	     		</div>
+	     	</div>
+	     	<hr>
+
+
+	     	
+
+
+
+	     	
+
+
+
+	     </div>
+
+
+
+	     <div class="next">
+
+	     	<a href="project1.html" class="next"><img src="project1_banner_next.svg" class="next"></a>
+
+    	 </div>
+
+
+
+
+
+
+
+		
+	     <script>
+   		 	$('body').scrollspy({target:'#TOC'})
+		 </script>
+		
+
+
+		<a href="#top" class="gototop">TOP</a>
+
+
+		<div id="footer">
+			宋昱萱 Sherry Sung | UIUX
+		</div>
+
+
+		
+
+
+
+	</body>
+</html>

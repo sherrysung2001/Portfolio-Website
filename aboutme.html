@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>About me</title>
+    <link rel="icon" href="favicon.png" >
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+    <!--這裡可以做出滾動變化效果 然後底下css要加一個
+        ul.navbar.scroll {
+          background-color: #333;
+        color: #fff;}
+     -->
+
+
+    <script type="text/javascript">
+      window.addEventListener("scroll", function() {
+     var scrollPosition = window.scrollY;
+     var navbar = document.querySelector("ul.navbar");
+     if (scrollPosition > 0) {
+        navbar.classList.add("scroll");
+      } else {
+       navbar.classList.remove("scroll");
+        }
+      })
+      
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <style>
+
+
+
+          body {
+           position: relative;
+          }
+
+
+
+
+
+  /*這裡是開頭——————————————————————————————————*/ 
+          ul.navbar.scroll {
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+          }
+
+          ul.navbar{
+            position: sticky;
+            top: 6px;
+            margin:0 auto;
+            padding: 16px 24px 0px 20px;
+            z-index: 5;
+            width: 85%;
+            overflow: hidden;
+              line-height: 40px;
+
+            display: block;
+            /*要nav bar的所有東西對齊 
+            然後部分靠右
+            要display:block
+            然後body要加 <li style="float:right">
+            然後要加line height！！ */
+
+            list-style-type: none;
+            background-color:white;
+            border-radius: 1000px;
+
+            }
+          
+
+
+          ul.navbar li{
+            height:100%;
+            float: left;  
+            align-items: center; 
+          }
+        
+        
+
+
+          ul.navbar li a{
+            padding: 0px 72px 0px 0px;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 16px;
+            font-weight: 350;
+            color: black;
+            }
+          
+
+          a.nav:hover{color:#BAB4A3;}
+
+
+
+          ul.navbar li a.resume{
+            color: white;
+            background-color:#5B5B5B;
+            border-radius: 200px;
+            padding: 10px 24px;
+          }
+
+
+
+
+          ul.navbar li a.resume:hover{
+            background-color: black;
+          }
+
+
+          .avatar{
+              display:inline-block;
+              width: 50px;
+
+          }
+
+          div a.resume{
+            display:inline-block;
+            padding: 10px 30px;
+            margin: 0 8px;
+            width: 80px;
+            text-align: center;
+            border-radius: 200px;
+            color: white;
+            background-color:#5B5B5B;
+            text-decoration: none;
+
+          }
+
+
+          a.resume:hover{
+            background-color: black;
+          }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*這裡是自我介紹——————————————————————————————————*/  
+
+
+            div.intro{
+                width: 80%;
+                margin: 80px auto;
+            }
+
+
+            img.intro{
+                width: 100%;
+                margin:20px 0 ;
+            }
+
+
+            div.embed{
+                margin: 50px auto;
+                width: 80%;
+                height: 900px;
+            }
+
+         
+
+
+
+
+
+
+  /*這裡是尾巴——————————————————————————————————*/
+          a.gototop{
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+
+            display:block;
+            width: 45px;
+            padding: 24px 10px;
+            border-radius: 100px;
+            margin: auto;
+            margin-top: 200px;
+            text-align: center;
+
+            vertical-align: middle;
+            text-decoration: none;
+            color: white;
+            background-color: #8D887C;
+            font-size: 12px;
+            box-shadow: 5px 5px 20px dimgray;
+          }
+          
+
+          a.gototop:hover{background-color:black;}
+
+
+
+          #footer{
+            width: 100%;
+            padding-top: 90px;
+            padding-bottom: 90px;
+            margin-top: 80px;
+            text-align: center;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 16px;
+            color: white;
+            background-color:#595959;
+            font-weight: 200;
+          }
+
+
+
+
+
+    </style>
+  </head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <body data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+
+
+
+
+
+<!-- 選單 -->
+
+    <ul class="navbar" >
+        <li><a href="./index.html"><img src="avatar.svg" class="avatar"></a></li>
+        <li style="float:right"><a class="resume" href="https://drive.google.com/file/d/1cRfGxJYxPgRqEnOsVQSEyIsP7YQmOTvR/view?usp=share_link" target="_blank">履歷下載</a></li>
+        <li style="float:right"><a class="nav" href="./aboutme.html" >關於我</a></li>
+        <li style="float:right"><a class="nav" href="./index.html" >HOME</a></li>
+        
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 自我介紹 -->
+
+
+
+
+            <div class="intro" id="top">
+                <a class="resume" href="https://drive.google.com/file/d/1cRfGxJYxPgRqEnOsVQSEyIsP7YQmOTvR/view?usp=share_link" target="_blank">履歷下載</a>
+                <a class="resume" href="https://drive.google.com/file/d/1A4DKIPW8B-s2myvQ_BGjUgE-nKWINPOq/view?usp=share_link" target="_blank">作品集PDF</a>
+                <img src="card_intro.svg" class="intro">
+                <img src="card_skill.svg" class="intro">
+            </div>
+
+     
+
+
+
+
+
+
+
+
+         <div class="embed">
+            <embed src="Resume.pdf" type="application/pdf" width="100%"  height="100%" />
+
+        </div>
+
+
+
+
+
+            
+
+       
+              <a href="#top" class="gototop">TOP</a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="footer">
+              宋昱萱 Sherry Sung | UIUX<br>
+              Email：sherrysung214@gmail.com
+            </div>
+
+
+
+
+
+
+  </body>
+</html>
